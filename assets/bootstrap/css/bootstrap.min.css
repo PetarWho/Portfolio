@@ -13631,39 +13631,10 @@ body {
     }
 }
 
-@media(min-width: 360px) and (max-width: 480px) {
-
-    .container-sm,
-    .container {
-        max-width: 340px
-    }
-    html *:not(body, .pulse){
-        overflow-x: hidden;
-    }
-}
-
-.container-sm,
-    .container {
-        max-width: 95vw;
-    }
-
-@media(min-width: 500px) {
-
-    .container-sm,
-    .container {
-        max-width: 95vw;
-    }
-}
-
 @media(min-width: 768px) {
     .page-footer ul li {
         position: relative;
         padding-left: 10px
-    }
-
-    .container-sm,
-    .container {
-        max-width: 740px
     }
 
     .page-footer ul li:before,
@@ -13686,5 +13657,24 @@ body {
     .page-footer ul li:after {
         top: 13px;
         transform: rotate(45deg)
+    }
+}
+
+@media(min-width: 360px) and (max-width: 480px) {
+
+    .container-sm,
+    .container {
+        max-width: 95vw;
+    }
+    html *:not(body, .pulse, .landing-page){
+        overflow-x: hidden;
+    }
+}
+
+@media(min-width: 500px) {
+
+    .container-sm,
+    .container {
+        max-width: 95vw;
     }
 }
