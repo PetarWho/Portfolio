@@ -104,19 +104,14 @@ html {
 }
 
 @media (min-width: 360px) and (max-width: 480px) {
-  html *:not(body) {
+  html *:not(body, .pulse, .landing-page, .text, .social > a) {
     overflow-x: hidden;
-  }
-  html .pulse, .landing-page, .text, .social>a, .block-heading, .text-info{
-    overflow-y: hidden;
   }
 }
 
-
-@media (min-width: 481px) {
+@media (min-width: 500px) {
   .container-sm, .container {
     max-width: 95vw;
-    overflow-x: hidden;
   }
 }
 
