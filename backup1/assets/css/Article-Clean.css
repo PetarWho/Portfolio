@@ -97,21 +97,3 @@ html {
   text-decoration: none;
 }
 
-@media (min-width: 360px) and (max-width: 480px) {
-  .container-sm, .container {
-    max-width: 95vw;
-  }
-}
-
-@media (min-width: 360px) and (max-width: 480px) {
-  html *:not(body, .pulse, .landing-page, .text, .social > a) {
-    overflow-x: hidden;
-  }
-}
-
-@media (min-width: 500px) {
-  .container-sm, .container {
-    max-width: 95vw;
-  }
-}
-
