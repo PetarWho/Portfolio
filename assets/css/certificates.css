@@ -1,5 +1,6 @@
 .cert-box .card-img-top.certificate {
     transition: transform 0.3s ease-in-out;
+    overflow: hidden;
   }
   
   .cert-box .card-img-top.certificate:hover {
