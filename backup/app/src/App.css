@@ -1,0 +1,70 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import './dist/output.css';
+@import url('./layouts/header/Header.css');
+@import url('./layouts/home/home.css');
+@import url('./layouts/footer/footer.css');
+@import url('./layouts/certificates/certificates.css');
+@import url('./layouts/projects/projects.css');
+@import url('./layouts/about/about.css');
+@import url('./layouts/contacts/contacts.css');
+
+
+.page-heading{
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.page-heading-secondary{
+  font-size: 2.3rem;
+  color: gray;
+}
+
+.link{
+  text-decoration: none;
+  color:inherit;
+}
+
+.App {
+  text-align: center;
+}
+
+.bold{
+  font-weight: bold;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

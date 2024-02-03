@@ -1,0 +1,14 @@
+.icon{
+    font-size: 2rem;
+    width: 60px;
+}
+
+.footer-nav{
+    font-size: 1rem;
+}
+
+@media screen and (max-width:360px ) {
+    .footer-nav{
+        font-size: 0.8rem;
+    }
+}
