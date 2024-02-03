@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter as BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./layouts/home/Home";
 import Footer from "./layouts/footer/Footer";
 import Header from "./layouts/header/Header";
@@ -7,7 +7,6 @@ import Projects from "./layouts/projects/Projects";
 import Certificates from "./layouts/certificates/Certificates";
 import About from "./layouts/about/About";
 import Contacts from "./layouts/contacts/Contacts";
-
 
 function App() {
   return (
