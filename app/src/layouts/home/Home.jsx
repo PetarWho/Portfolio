@@ -1,6 +1,5 @@
 import React from 'react';
 import technologies from './technologies';
-import languages from './languages';
 import './items.scss';
 
 function Home() {
