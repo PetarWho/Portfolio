@@ -7,23 +7,22 @@ import Projects from "./layouts/projects/Projects";
 import Certificates from "./layouts/certificates/Certificates";
 import About from "./layouts/about/About";
 import Contacts from "./layouts/contacts/Contacts";
+import { Switch } from '@headlessui/react';
 
 function App() {
   return (
     <div className="App flex flex-col min-h-screen">
-      <BrowserRouter basename='/Portfolio'>
         <div className="pt-16 overflow-y-auto flex-grow">
           <Header />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="./projects" element={<Projects />} />
-            <Route path="./certificates" element={<Certificates />} />
-            <Route path="./about" element={<About />} />
-            <Route path="./contacts" element={<Contacts />} />
-          </Routes>
+          <Switch>
+            <Route exact path="/"><Home /></Route>
+            <Route exact path="./projects"><Projects /></Route>
+            <Route exact path="./certificates"><Certificates /></Route>
+            <Route exact path="./about"><About /></Route>
+            <Route exact path="./contacts"><Contacts /></Route>
+          </Switch>
         </div>
         <Footer />
-      </BrowserRouter>
     </div>
   );
 }
