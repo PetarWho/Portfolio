@@ -15,7 +15,7 @@ function App() {
         <div className="pt-16 overflow-y-auto flex-grow">
           <Header />
           <Routes>
-            <Route exact path="/Portfolio" element={<Home />} />
+            <Route path="/" element={<Home />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/certificates" element={<Certificates />} />
             <Route path="/about" element={<About />} />
