@@ -1,0 +1,86 @@
+.info-small{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    color: rgb(97, 97, 97);
+}
+
+.info-main{
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.info-main-text{
+    max-width: 60%;
+}
+
+.about-box{
+    width: 100%;
+}
+
+.employment-text{
+    max-width: 80%;
+}
+
+.current-employment{
+    display: flex;
+    justify-content: center;
+}
+
+.interests-main{
+    display: grid;
+    justify-items: flex-start; 
+    grid-template-columns: repeat(3, minmax(300px, 1fr)); 
+    grid-gap: 15px;
+    margin: 20px;
+}
+
+.interest{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.interest-wrapper{
+    max-width: 80%;
+}
+
+.interest-pic{
+    border-radius: 360px;;
+}
+.interest-text{
+    display: block !important;
+    font-size: 1.5rem;
+}
+
+.interests-box{
+    margin-top: 20px;
+}
+
+.info-main-text{
+    text-align: left;
+}
+
+.final-text{
+    margin-top: 50px;
+    font-size: 1.1rem;
+    padding: 20px;
+}
+
+
+@media screen and (max-width:700px ) {
+    .interests-main{
+        grid-template-columns: repeat(1, minmax(300px, 1fr)); 
+    }
+}
+
+@media screen and (max-width:1000px ) and (min-width:700px) {
+    .interests-main{
+        grid-template-columns: repeat(2, minmax(300px, 1fr)); 
+    }
+}
