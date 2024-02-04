@@ -8,6 +8,10 @@ function MobileMenu() {
         setIsOpen(!isOpen);
     };
 
+    const closeMenu = () => {
+        setIsOpen(false);
+    };
+
     return (
         <div className="relative">
             <button className="block md:hidden text-white focus:outline-none mr-10" onClick={toggleMenu}>
@@ -18,22 +22,22 @@ function MobileMenu() {
                     <div className="py-2">
                         <ul className="text-white text-center">
                             <li className="py-2">
-                                <Link className="block px-4 hover:bg-gray-800" to="projects">
+                                <Link className="block px-4 hover:bg-gray-800" to="projects" onClick={closeMenu}>
                                     PROJECTS
                                 </Link>
                             </li>
                             <li className="py-2">
-                                <Link className="block px-4 hover:bg-gray-800" to="certificates">
+                                <Link className="block px-4 hover:bg-gray-800" to="certificates" onClick={closeMenu}>
                                     CERTIFICATES
                                 </Link>
                             </li>
                             <li className="py-2">
-                                <Link className="block px-4 hover:bg-gray-800" to="about">
+                                <Link className="block px-4 hover:bg-gray-800" to="about" onClick={closeMenu}>
                                     ABOUT
                                 </Link>
                             </li>
                             <li className="py-2">
-                                <Link className="block px-4 hover:bg-gray-800" to="contacts">
+                                <Link className="block px-4 hover:bg-gray-800" to="contacts" onClick={closeMenu}>
                                     CONTACTS
                                 </Link>
                             </li>
