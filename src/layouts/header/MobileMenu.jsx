@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Linknk } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function MobileMenu() {
     const [isOpen, setIsOpen] = useState(false);
