@@ -3,6 +3,7 @@ import projects from './projectData';
 import { faCalendar, faInfoCircle, faCogs } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import formattedDate from '../utils/dates';
+import { Link } from 'react-router-dom';
 
 const compareDates = (a, b) => {
   return a.date.getTime() - b.date.getTime();
@@ -73,7 +74,7 @@ function Projects() {
       <div className="proj-image-container">
         {sortedProjects.map((project, index) => (
           <div className="project-card" key={index}>
-            <a className='link' href={project.url}>
+            <Link className='link' to={project.url}>
               <div className="icon-container">
                 <FontAwesomeIcon icon={project.image} size="3x" />
               </div>
@@ -90,7 +91,7 @@ function Projects() {
                 <p className="date"><FontAwesomeIcon icon={faCalendar} /> {formattedDate(project.date, 1)}</p>
                 <p className="description"><FontAwesomeIcon icon={faInfoCircle} /> {project.description}</p>
               </div>
-            </a>
+            </Link>
           </div>
         ))}
       </div>

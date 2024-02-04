@@ -11,7 +11,7 @@ const projects = [
   },
   { 
     name: "Tap Vacation", 
-    url: "https://github.com/PetarWho/Task.Do", 
+    url: "#", 
     technologies: ["Angular", "ASP.NET Core MVC", "MS SQL", "Git"], 
     image: faPlane, 
     description: "Application designed exclusively to make it easier for employees to request leave and get it approved by their employers. By gathering vital information like the preferred dates and a thorough explanation for the leave. I collaborated on this project as a Front-end developer while on an internship at Zingasoft.", 
