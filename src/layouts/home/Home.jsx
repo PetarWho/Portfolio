@@ -32,16 +32,16 @@ function Home() {
             <span style={{ '--i': 19 }}>r</span>
           </div>
           <div className='orbit-container'>
-            <div class="slider">
+            <div className="slider">
               <p className='home-text'>Technologies</p>
-              <div class="slide-track">
+              <div className="slide-track">
                 {technologies.map((tech, index) => (
-                  <div class="slide">
+                  <div className="slide">
                     <img src={tech.image} width="50" alt={tech.name} />
                   </div>
                 ))}
                 {technologies.map((tech, index) => (
-                  <div class="slide">
+                  <div className="slide">
                     <img src={tech.image} width="50" alt={tech.name} />
                   </div>
                 ))}
