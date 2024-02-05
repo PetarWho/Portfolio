@@ -107,6 +107,7 @@
 
   .explore-wrap{
     margin-top: 20px;
+    display: inline-block;
   }
 
   .explore{
@@ -119,9 +120,11 @@
   font: inherit;
   font-weight: 500;
   line-height: 1;
-  padding: 1em 1.5em;
   position: relative;
   transition: filter var(--motion-duration);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   }
 
   .explore:hover {
@@ -133,28 +136,19 @@
   }
   
   .explore > span {
-    display: block;
-    position: relative;
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
     transition: transform var(--motion-duration) var(--motion-ease);
     z-index: 1;
   }
   
-  .explore:hover > span {
-    transform: scale(1.05);
-  }
-  
-  .explore:active > span {
-    transform: scale(0.95);
-  }
-  
   .explore > svg {
     fill: #950cde;
-    position: absolute;
-    top: 20%;
-    left: -200%;
-    width: 500%;
-    height: 60%;
-    min-height: 60px;
+    width: 120px;
+    height: 60px;
+    max-height: 60px;
   }
   
   .explore > svg > path {

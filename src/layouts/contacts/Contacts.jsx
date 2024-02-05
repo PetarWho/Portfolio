@@ -131,6 +131,7 @@ const Contacts = () => {
                             onChange={handleChange}
                             required
                             className="textarea"
+                            rows={3}
                         />
                     </div>
 
