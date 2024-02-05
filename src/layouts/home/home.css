@@ -154,6 +154,7 @@
     left: -200%;
     width: 500%;
     height: 60%;
+    min-height: 60px;
   }
   
   .explore > svg > path {
