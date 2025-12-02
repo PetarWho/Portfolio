@@ -14,17 +14,17 @@ const CertificateCard = ({ certificate }: CertificateCardProps) => {
   return (
     <>
       <Card as="article" hoverable className="overflow-hidden flex flex-col">
-        <div className="bg-gray-800 relative flex-1 flex items-center justify-center cursor-pointer group">
+        <div className="relative flex-1 flex items-center justify-center cursor-pointer group">
           {certificate.image ? (
             <>
               <img
                 src={certificate.image}
                 alt={certificate.name}
-                className="w-full h-full object-contain p-4 group-hover:opacity-90 transition-opacity"
+                className="w-full h-full object-contain p-2 group-hover:opacity-90 transition-opacity"
                 loading="lazy"
                 onClick={() => setIsModalOpen(true)}
               />
-              <div className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/20 transition-colors pointer-events-none">
+              <div className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/40 transition-colors pointer-events-none">
                 <div className="opacity-0 group-hover:opacity-100 transition-opacity text-white text-sm font-medium">
                   Click to expand
                 </div>
@@ -42,19 +42,6 @@ const CertificateCard = ({ certificate }: CertificateCardProps) => {
           <time className="text-xs text-gray-500" dateTime={certificate.date.toISOString()}>
             {formatDate(certificate.date)}
           </time>
-          {certificate.url && (
-            <div className="mt-3">
-              <a
-                href={certificate.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex text-primary-400 hover:text-primary-300 underline"
-                aria-label={`Open certificate ${certificate.name} in new tab`}
-              >
-                Verify
-              </a>
-            </div>
-          )}
         </div>
       </Card>
 
@@ -62,6 +49,8 @@ const CertificateCard = ({ certificate }: CertificateCardProps) => {
         isOpen={isModalOpen}
         imageSrc={certificate.image || ''}
         imageAlt={certificate.name}
+        verifyUrl={certificate.url}
+        certificateName={certificate.name}
         onClose={() => setIsModalOpen(false)}
       />
     </>
