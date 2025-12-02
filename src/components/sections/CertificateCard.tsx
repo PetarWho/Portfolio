@@ -25,7 +25,7 @@ const CertificateCard = ({ certificate }: CertificateCardProps) => {
                 onClick={() => setIsModalOpen(true)}
               />
               <div className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/40 transition-colors pointer-events-none">
-                <div className="opacity-0 group-hover:opacity-100 transition-opacity text-white text-sm font-medium">
+                <div className="opacity-0 group-hover:opacity-100 transition-opacity text-white text-md font-medium">
                   Click to expand
                 </div>
               </div>
@@ -38,10 +38,13 @@ const CertificateCard = ({ certificate }: CertificateCardProps) => {
         </div>
         <div className="p-4">
           <h3 className="text-lg font-semibold text-white">{certificate.name}</h3>
-          <p className="text-sm text-gray-400">{certificate.issuer}</p>
-          <time className="text-xs text-gray-500" dateTime={certificate.date.toISOString()}>
+          <div className="flex row gap-2">
+          <p className="text-md text-gray-400">{certificate.issuer}</p>
+          <span className="text-md text-gray-500">|</span>
+          <time className="text-md text-gray-400" dateTime={certificate.date.toISOString()}>
             {formatDate(certificate.date)}
           </time>
+          </div>
         </div>
       </Card>
 

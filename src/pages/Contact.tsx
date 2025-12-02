@@ -43,45 +43,45 @@ const Contact = () => {
 
         <form className="max-w-xl" onSubmit={handleSubmit(onSubmit)} noValidate>
           <div className="mb-4">
-            <label htmlFor="name" className="block text-sm font-medium text-gray-200 mb-1">Name</label>
+            <label htmlFor="name" className="block text-md font-medium text-gray-200 mb-1">Name</label>
             <input
               id="name"
               type="text"
               {...register('name')}
-              className="w-full px-3 py-2 rounded-md bg-gray-900 border border-gray-700 text-white focus-visible:ring-2 focus-visible:ring-primary-500"
+              className="w-full px-3 py-2 rounded-md bg-gray-900 border border-gray-700 text-white focus-visible:ring-2 focus-visible:ring-[var(--color-primary-500)]"
               aria-invalid={!!errors.name}
               aria-describedby={errors.name ? 'name-error' : undefined}
               required
             />
-            {errors.name && <p id="name-error" className="mt-1 text-sm text-red-400">{errors.name.message}</p>}
+            {errors.name && <p id="name-error" className="mt-1 text-md text-[var(--color-error-light)]">{errors.name.message}</p>}
           </div>
 
           <div className="mb-4">
-            <label htmlFor="email" className="block text-sm font-medium text-gray-200 mb-1">Email</label>
+            <label htmlFor="email" className="block text-md font-medium text-gray-200 mb-1">Email</label>
             <input
               id="email"
               type="email"
               {...register('email')}
-              className="w-full px-3 py-2 rounded-md bg-gray-900 border border-gray-700 text-white focus-visible:ring-2 focus-visible:ring-primary-500"
+              className="w-full px-3 py-2 rounded-md bg-gray-900 border border-gray-700 text-white focus-visible:ring-2 focus-visible:ring-[var(--color-primary-500)]"
               aria-invalid={!!errors.email}
               aria-describedby={errors.email ? 'email-error' : undefined}
               required
             />
-            {errors.email && <p id="email-error" className="mt-1 text-sm text-red-400">{errors.email.message}</p>}
+            {errors.email && <p id="email-error" className="mt-1 text-md text-[var(--color-error-light)]">{errors.email.message}</p>}
           </div>
 
           <div className="mb-6">
-            <label htmlFor="message" className="block text-sm font-medium text-gray-200 mb-1">Message</label>
+            <label htmlFor="message" className="block text-md font-medium text-gray-200 mb-1">Message</label>
             <textarea
               id="message"
               rows={5}
               {...register('message')}
-              className="w-full px-3 py-2 rounded-md bg-gray-900 border border-gray-700 text-white focus-visible:ring-2 focus-visible:ring-primary-500"
+              className="w-full px-3 py-2 rounded-md bg-gray-900 border border-gray-700 text-white focus-visible:ring-2 focus-visible:ring-[var(--color-primary-500)]"
               aria-invalid={!!errors.message}
               aria-describedby={errors.message ? 'message-error' : undefined}
               required
             />
-            {errors.message && <p id="message-error" className="mt-1 text-sm text-red-400">{errors.message.message}</p>}
+            {errors.message && <p id="message-error" className="mt-1 text-md text-[var(--color-error-light)]">{errors.message.message}</p>}
           </div>
 
           <Button type="submit" isLoading={isSubmitting} aria-live="polite">
@@ -89,7 +89,7 @@ const Contact = () => {
           </Button>
 
           {isSubmitSuccessful && (
-            <p className="mt-3 text-green-400" role="status">Message sent successfully. Thank you!</p>
+            <p className="mt-3 text-[var(--color-success-light)]" role="status">Message sent successfully. Thank you!</p>
           )}
         </form>
       </Container>

@@ -29,7 +29,7 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
     };
 
     const hoverStyles = hoverable
-      ? 'hover:border-primary-500/50 hover:shadow-2xl hover:shadow-primary-500/10 hover:-translate-y-1 cursor-pointer'
+      ? 'hover:border-[var(--color-primary-500)]/50 hover:shadow-2xl hover:shadow-[var(--color-primary-500)]/10 hover:-translate-y-1 cursor-pointer'
       : '';
 
     return (

@@ -37,9 +37,9 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className={cn(
                   'p-3 rounded-full bg-gray-800 text-gray-300',
-                  'hover:bg-primary-600 hover:text-white hover:scale-110',
+                  'hover:bg-[var(--color-primary-600)] hover:text-white hover:scale-110',
                   'transition-all duration-300',
-                  'focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900'
+                  'focus-visible:ring-2 focus-visible:ring-[var(--color-primary-500)] focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900'
                 )}
                 aria-label={social.ariaLabel}
               >
@@ -57,8 +57,8 @@ const Footer = () => {
                 <Link
                   to={link.path}
                   className={cn(
-                    'text-gray-400 hover:text-primary-400 transition-colors duration-200',
-                    'focus-visible:ring-2 focus-visible:ring-primary-500 rounded-md px-2 py-1'
+                    'text-gray-400 text-lg hover:text-[var(--color-primary-accent)] transition-colors duration-200',
+                    'focus-visible:ring-2 focus-visible:ring-[var(--color-primary-500)] rounded-md px-2 py-1'
                   )}
                 >
                   {link.name}
@@ -69,7 +69,7 @@ const Footer = () => {
         </nav>
 
         {/* Copyright */}
-        <div className="text-center text-gray-500 text-sm mb-6">
+        <div className="text-center text-gray-500 text-md mb-6">
           <p>
             &copy; {new Date().getFullYear()} {portfolioData.personalInfo.name}. All rights reserved.
           </p>
@@ -81,9 +81,9 @@ const Footer = () => {
             onClick={scrollToTop}
             className={cn(
               'p-2 rounded-full bg-gray-800 text-gray-300',
-              'hover:bg-primary-600 hover:text-white hover:scale-110',
+              'hover:bg-[var(--color-primary-600)] hover:text-white hover:scale-110',
               'transition-all duration-300',
-              'focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900'
+              'focus-visible:ring-2 focus-visible:ring-[var(--color-primary-500)] focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900'
             )}
             aria-label="Scroll to top of page"
           >

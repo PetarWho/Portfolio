@@ -34,7 +34,7 @@ const Hero = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gradient flex flex-wrap justify-center gap-2">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold flex flex-wrap justify-center gap-2 bg-clip-text text-transparent" style={{ backgroundImage: 'linear-gradient(to right, var(--color-primary-accent), var(--color-secondary-500))' }}>
               {titleLetters.map((letter, index) => (
                 <motion.span
                   key={index}

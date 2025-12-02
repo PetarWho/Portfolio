@@ -53,7 +53,7 @@ const socialLinks: SocialLink[] = [
 
 export const portfolioData: PortfolioData = {
   personalInfo: {
-    name: 'Peter Penev',
+    name: 'Petar Penev',
     title: 'Full-Stack Developer',
     location: 'Plovdiv | Haskovo, Bulgaria',
     currentEmployment: 'Currently studying Software Technologies and Design at the University of Plovdiv',

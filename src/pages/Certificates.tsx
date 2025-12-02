@@ -53,11 +53,11 @@ const Certificates = () => {
             placeholder="Search by name, issuer, or technology (e.g., Python, Django, SoftUni)..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-primary-500 transition-colors"
+            className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-[var(--color-primary-500)] transition-colors"
             aria-label="Search certificates"
           />
           {searchQuery && (
-            <p className="text-sm text-gray-400 mt-2">
+            <p className="text-md text-gray-400 mt-2">
               Found {filteredCertificates.length} result{filteredCertificates.length !== 1 ? 's' : ''}
             </p>
           )}
@@ -74,7 +74,7 @@ const Certificates = () => {
           <div className="flex items-center justify-center py-12 text-center">
             <div>
               <p className="text-gray-400 text-lg">No certificates found</p>
-              <p className="text-gray-500 text-sm mt-2">Try adjusting your search criteria</p>
+              <p className="text-gray-500 text-md mt-2">Try adjusting your search criteria</p>
             </div>
           </div>
         )}

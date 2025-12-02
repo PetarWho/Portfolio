@@ -52,7 +52,7 @@ const Header = () => {
           {/* Logo */}
           <Link
             to="/"
-            className="text-xl md:text-2xl font-bold text-white hover:text-primary-400 transition-colors focus-visible:ring-2 focus-visible:ring-primary-500 rounded-md px-2 py-1"
+            className="text-xl md:text-2xl font-bold text-white hover:text-[var(--color-primary-accent)] transition-colors focus-visible:ring-2 focus-visible:ring-[var(--color-primary-500)] rounded-md px-2 py-1"
             aria-label="Go to homepage"
           >
             P. Penev
@@ -65,11 +65,11 @@ const Header = () => {
                 <Link
                   to={item.path}
                   className={cn(
-                    'px-4 py-2 rounded-lg text-sm lg:text-base font-medium transition-all duration-200',
-                    'hover:bg-gray-800 hover:text-primary-400',
-                    'focus-visible:ring-2 focus-visible:ring-primary-500',
+                    'px-4 py-2 rounded-lg text-lg lg:text-lg font-medium transition-all duration-200',
+                    'hover:bg-gray-800 hover:text-[var(--color-primary-accent)]',
+                    'focus-visible:ring-2 focus-visible:ring-[var(--color-primary-500)]',
                     isActive(item.path)
-                      ? 'text-primary-400 bg-gray-800'
+                      ? 'text-[var(--color-primary-accent)] bg-gray-800'
                       : 'text-gray-300'
                   )}
                   aria-label={item.ariaLabel}
@@ -84,7 +84,7 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             type="button"
-            className="md:hidden p-2 rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-primary-500"
+            className="md:hidden p-2 rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white transition-colors focus-visible:ring-2 focus-visible:ring-[var(--color-primary-500)]"
             onClick={() => setIsOpen(!isOpen)}
             aria-expanded={isOpen}
             aria-controls="mobile-menu"
@@ -107,10 +107,10 @@ const Header = () => {
                     to={item.path}
                     className={cn(
                       'block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200',
-                      'hover:bg-gray-800 hover:text-primary-400',
-                      'focus-visible:ring-2 focus-visible:ring-primary-500',
+                      'hover:bg-gray-800 hover:text-[var(--color-primary-accent)]',
+                      'focus-visible:ring-2 focus-visible:ring-[var(--color-primary-500)]',
                       isActive(item.path)
-                        ? 'text-primary-400 bg-gray-800'
+                        ? 'text-[var(--color-primary-accent)] bg-gray-800'
                         : 'text-gray-300'
                     )}
                     aria-label={item.ariaLabel}

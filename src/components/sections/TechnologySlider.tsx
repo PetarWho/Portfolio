@@ -3,7 +3,7 @@ import { technologies } from '@/data/technologies';
 const TechnologySlider = () => {
   return (
     <div className="relative overflow-hidden py-6" aria-label="Technologies I use">
-      <p className="text-center text-gray-400 text-sm uppercase tracking-widest mb-4">
+      <p className="text-center text-gray-400 text-md uppercase tracking-widest mb-4">
         Technologies
       </p>
       <div className="flex [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">

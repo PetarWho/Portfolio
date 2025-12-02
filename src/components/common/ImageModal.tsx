@@ -53,7 +53,7 @@ const ImageModal = ({ isOpen, imageSrc, imageAlt, onClose, verifyUrl, certificat
               href={verifyUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex px-4 py-2 bg-primary-500 hover:bg-primary-600 text-white font-medium rounded transition-colors"
+              className="inline-flex px-4 py-2 bg-[var(--color-primary-500)] hover:bg-[var(--color-primary-600)] text-white font-medium rounded transition-colors"
               aria-label={`Open certificate ${certificateName} in new tab`}
             >
               Verify Certificate
