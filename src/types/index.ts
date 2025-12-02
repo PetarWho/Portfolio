@@ -27,6 +27,7 @@ export interface Certificate {
   description?: string;
   category?: string;
   priority?: number; // Higher number = higher priority (shown first). Default: 0
+  technologies?: string[]; // Array of technology names (e.g., ['Python', 'Django'])
 }
 
 export interface Interest {

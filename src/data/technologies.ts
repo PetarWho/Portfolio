@@ -1,34 +1,23 @@
 import { Technology } from '@/types';
 
-// Auto-discover all technology images from public/assets/technologies
-const technologyImages = import.meta.glob<{ default: string }>('/public/assets/technologies/*.{png,jpg,jpeg,svg}', {
-  eager: true,
-  import: 'default',
-});
+// Direct mapping of technology names to their image paths
+// This ensures images load correctly without glob import issues
+const technologiesData: Technology[] = [
+  { name: 'ASP.NET', image: 'assets/technologies/dotnet.png' },
+  { name: 'Angular', image: 'assets/technologies/angular.png' },
+  { name: 'Django', image: 'assets/technologies/django.png' },
+  { name: 'Docker', image: 'assets/technologies/docker.png' },
+  { name: 'FastAPI', image: 'assets/technologies/fastapi.png' },
+  { name: 'Flutter', image: 'assets/technologies/flutter.png' },
+  { name: 'MS SQL', image: 'assets/technologies/mssql.png' },
+  { name: 'MySQL', image: 'assets/technologies/mysql.png' },
+  { name: 'Node.js', image: 'assets/technologies/nodejs.png' },
+  { name: 'PostgreSQL', image: 'assets/technologies/postgresql.png' },
+  { name: 'Python', image: 'assets/technologies/python.png' },
+  { name: 'React', image: 'assets/technologies/react.png' },
+  { name: 'Unity', image: 'assets/technologies/unity.png' },
+];
 
-// Name mapping for better display names (filename without extension -> display name)
-const nameMap: Record<string, string> = {
-  unity: 'Unity',
-  dotnet: 'ASP.NET',
-  django: 'Django',
-  react: 'React',
-  nodejs: 'Node.js',
-  mssql: 'MS SQL',
-  postgresql: 'PostgreSQL',
-  angular: 'Angular',
-  docker: 'Docker',
-};
-
-// Generate technologies array from discovered images
-export const technologies: Technology[] = Object.entries(technologyImages)
-  .map(([path]) => {
-    // Extract filename without extension
-    const filename = path.split('/').pop()?.replace(/\.[^.]+$/, '') || '';
-    const displayName = nameMap[filename] || filename.charAt(0).toUpperCase() + filename.slice(1);
-    
-    return {
-      name: displayName,
-      image: `assets/technologies/${path.split('/').pop()}`,
-    };
-  })
-  .sort((a, b) => a.name.localeCompare(b.name));
+export const technologies: Technology[] = technologiesData.sort((a, b) =>
+  a.name.localeCompare(b.name)
+);
