@@ -1,4 +1,4 @@
-import { HTMLAttributes, forwardRef } from 'react';
+import { HTMLAttributes, forwardRef, ElementType } from 'react';
 import { cn } from '@/utils/helpers';
 
 export interface SectionProps extends HTMLAttributes<HTMLElement> {
@@ -10,13 +10,14 @@ const Section = forwardRef<HTMLElement, SectionProps>(
   (
     {
       className,
-      as: Component = 'section',
+      as = 'section',
       spacing = 'lg',
       children,
       ...props
     },
     ref
   ) => {
+    const Component = as as ElementType;
     const spacingStyles = {
       sm: 'py-8',
       md: 'py-12',

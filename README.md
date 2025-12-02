@@ -49,10 +49,40 @@ src/
    ```
 
 ## Content updates
+
+### Personal Info, Projects, Interests
 - Edit `src/data/portfolio.ts` for personal info, interests and social links.
 - Edit `src/data/projects.ts` to add/update projects.
-- Edit `src/data/certificates.ts` to add/update certificates.
-- Edit `src/data/technologies.ts` to add/update the tech slider.
+
+### Technologies (Auto-Discovery)
+Technologies are automatically discovered from `public/assets/technologies/`:
+1. Add your technology logo (png, jpg, jpeg, or svg) to `public/assets/technologies/`
+2. The filename (without extension) will be used as the display name
+3. Optionally, add a mapping in `src/data/technologies.ts` `nameMap` for custom display names
+4. Push to GitHub - it will appear automatically!
+
+**Example:** Add `typescript.png` → displays as "Typescript" (or map it to "TypeScript" in nameMap)
+
+### Certificates (Auto-Discovery with Metadata)
+Certificates require both an image AND metadata:
+1. Add certificate image to `public/assets/certificates/` (e.g., `new-cert.png`)
+2. Add metadata to `src/data/certificates.ts` in the `certificateMetadata` object:
+   ```typescript
+   'new-cert': {
+     name: 'Certificate Name',
+     issuer: 'Issuing Organization',
+     category: 'Category',
+     date: new Date(2024, 0, 15), // January 15, 2024
+     url: 'https://verify-url.com',
+     priority: 80, // Optional: Higher = shows first (default: 0)
+   }
+   ```
+3. Push to GitHub - the certificate will appear automatically!
+
+**Sorting Order:**
+1. **Priority** (higher first) - Use this for your most important certificates
+2. **Category** (Diploma > DevOps > C#/Python/JavaScript > Database > Fundamentals)
+3. **Date** (newest first)
 
 ## Routing
 - Hash routing is used to support GitHub Pages (`/#/route`). Adjust in `src/App.tsx` if deploying elsewhere.

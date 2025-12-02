@@ -26,6 +26,7 @@ export interface Certificate {
   image?: string;
   description?: string;
   category?: string;
+  priority?: number; // Higher number = higher priority (shown first). Default: 0
 }
 
 export interface Interest {

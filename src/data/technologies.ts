@@ -1,40 +1,34 @@
 import { Technology } from '@/types';
 
-export const technologies: Technology[] = [
-  {
-    name: 'Unity',
-    image: '/assets/technologies/unity.png',
-  },
-  {
-    name: 'ASP.NET',
-    image: '/assets/technologies/dotnet.png',
-  },
-  {
-    name: 'Django',
-    image: '/assets/technologies/django.png',
-  },
-  {
-    name: 'React',
-    image: '/assets/technologies/react.png',
-  },
-  {
-    name: 'Node.js',
-    image: '/assets/technologies/nodejs.png',
-  },
-  {
-    name: 'MS SQL',
-    image: '/assets/technologies/mssql.png',
-  },
-  {
-    name: 'PostgreSQL',
-    image: '/assets/technologies/postgresql.png',
-  },
-  {
-    name: 'Angular',
-    image: '/assets/technologies/angular.png',
-  },
-  {
-    name: 'Docker',
-    image: '/assets/technologies/docker.png',
-  },
-];
+// Auto-discover all technology images from public/assets/technologies
+const technologyImages = import.meta.glob<{ default: string }>('/public/assets/technologies/*.{png,jpg,jpeg,svg}', {
+  eager: true,
+  import: 'default',
+});
+
+// Name mapping for better display names (filename without extension -> display name)
+const nameMap: Record<string, string> = {
+  unity: 'Unity',
+  dotnet: 'ASP.NET',
+  django: 'Django',
+  react: 'React',
+  nodejs: 'Node.js',
+  mssql: 'MS SQL',
+  postgresql: 'PostgreSQL',
+  angular: 'Angular',
+  docker: 'Docker',
+};
+
+// Generate technologies array from discovered images
+export const technologies: Technology[] = Object.entries(technologyImages)
+  .map(([path]) => {
+    // Extract filename without extension
+    const filename = path.split('/').pop()?.replace(/\.[^.]+$/, '') || '';
+    const displayName = nameMap[filename] || filename.charAt(0).toUpperCase() + filename.slice(1);
+    
+    return {
+      name: displayName,
+      image: `/assets/technologies/${path.split('/').pop()}`,
+    };
+  })
+  .sort((a, b) => a.name.localeCompare(b.name));
