@@ -7,7 +7,7 @@ const TechnologySlider = () => {
         Technologies
       </p>
       <div className="flex [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
-        <div className="flex animate-[scroll_25s_linear_infinite] gap-8 pr-8" aria-hidden="true">
+        <div className="flex animate-[scroll_25s_linear_infinite] gap-12 pr-12" aria-hidden="true">
           {technologies.map((tech) => (
             <div key={tech.name} className="flex items-center justify-center flex-shrink-0 w-16 h-16">
               <img
