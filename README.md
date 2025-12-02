@@ -85,7 +85,10 @@ Certificates require both an image AND metadata:
 3. **Date** (newest first)
 
 ## Routing
-- Hash routing is used to support GitHub Pages (`/#/route`). Adjust in `src/App.tsx` if deploying elsewhere.
+- **BrowserRouter** with clean URLs (no hash `#`)
+- Uses GitHub Pages SPA redirect technique via `404.html` and `index.html` scripts
+- `basename` is set to `/Portfolio/` for GitHub Pages deployment
+- Direct URL access works correctly (e.g., `https://username.github.io/Portfolio/about`)
 
 ## Assets
 Place images under `public/assets` using these paths:

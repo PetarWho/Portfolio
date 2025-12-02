@@ -2,6 +2,13 @@
 
 ## Latest Updates
 
+### Clean URLs & Image Path Fixes 🔗
+- **Removed hash routing** - URLs are now clean (e.g., `/Portfolio/about` instead of `/#/about`)
+- Switched from `HashRouter` to `BrowserRouter`
+- Added GitHub Pages SPA redirect technique for client-side routing
+- **Fixed 404 image errors** - Changed all image paths from `/assets/` to `assets/` (relative)
+- All assets now load correctly on GitHub Pages
+
 ### Priority-Based Certificate Sorting 🎯
 - Added `priority` field to certificates (higher number = shown first)
 - Smart multi-level sorting:

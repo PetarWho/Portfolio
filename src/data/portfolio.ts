@@ -7,19 +7,19 @@ const interests: Interest[] = [
   {
     name: 'Artificial Intelligence',
     description: 'Exploring machine learning, neural networks, and AI applications',
-    image: '/assets/interests/ai.jpg',
+    image: 'assets/interests/ai.jpg',
     icon: 'Brain',
   },
   {
     name: 'Virtual Reality',
     description: 'Immersive experiences and VR development',
-    image: '/assets/interests/vr.jpg',
+    image: 'assets/interests/vr.jpg',
     icon: 'Glasses',
   },
   {
     name: 'Hardware',
     description: 'Computer hardware, electronics, and IoT devices',
-    image: '/assets/interests/hardware.jpg',
+    image: 'assets/interests/hardware.jpg',
     icon: 'Cpu',
   },
 ];

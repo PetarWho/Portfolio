@@ -28,7 +28,7 @@ export const technologies: Technology[] = Object.entries(technologyImages)
     
     return {
       name: displayName,
-      image: `/assets/technologies/${path.split('/').pop()}`,
+      image: `assets/technologies/${path.split('/').pop()}`,
     };
   })
   .sort((a, b) => a.name.localeCompare(b.name));

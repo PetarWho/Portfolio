@@ -1,4 +1,4 @@
-import { Route, Routes, HashRouter } from 'react-router-dom';
+import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import { Layout } from '@/components/layout';
 import Home from '@/pages/Home';
 import Projects from '@/pages/Projects';
@@ -9,7 +9,7 @@ import NotFound from '@/pages/NotFound';
 
 function App() {
   return (
-    <HashRouter>
+    <BrowserRouter basename="/Portfolio">
       <Routes>
         <Route path="/" element={<Layout />}> 
           <Route index element={<Home />} />
@@ -20,7 +20,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 
