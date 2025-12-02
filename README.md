@@ -1,70 +1,90 @@
-# Getting Started with Create React App
+# Portfolio (React + TypeScript + Vite + Tailwind)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A fully accessible, modern portfolio built with React, TypeScript, Vite and Tailwind CSS. It replaces the old CRA app located in `old/` and keeps your content while improving structure, performance and UX.
 
-## Available Scripts
+## Tech stack
+- React 18 + TypeScript
+- Vite 6
+- Tailwind CSS 3
+- React Router 7
+- Framer Motion
+- React Hook Form + Zod
+- Lucide Icons
 
-In the project directory, you can run:
+## Accessibility (WCAG 2.2)
+- Semantic HTML with proper landmarks (`header`, `nav`, `main`, `footer`)
+- Keyboard navigable, visible focus states
+- Skip to main content link
+- Color contrast >= 4.5:1 for text
+- Link purpose is clear
+- Form inputs have labels, error messages, and ARIA associations
+- Reduced motion support via `prefers-reduced-motion`
 
-### `npm start`
+## Project structure
+```
+src/
+  components/
+    common/     # reusable primitives (Button, Card, Badge, Container, Section)
+    layout/     # Header, Footer, Layout
+    sections/   # Hero, TechnologySlider, ProjectCard, CertificateCard
+  pages/        # Home, Projects, Certificates, About, Contact
+  data/         # portfolio.ts, projects.ts, certificates.ts, technologies.ts
+  types/        # TypeScript interfaces
+  utils/        # helpers (date formatting, classes)
+  styles/       # Tailwind index.css
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Local development
+1. Install dependencies
+   ```pwsh
+   npm install
+   ```
+2. Run dev server
+   ```pwsh
+   npm run dev
+   ```
+3. Build for production
+   ```pwsh
+   npm run build
+   ```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Content updates
+- Edit `src/data/portfolio.ts` for personal info, interests and social links.
+- Edit `src/data/projects.ts` to add/update projects.
+- Edit `src/data/certificates.ts` to add/update certificates.
+- Edit `src/data/technologies.ts` to add/update the tech slider.
 
-### `npm test`
+## Routing
+- Hash routing is used to support GitHub Pages (`/#/route`). Adjust in `src/App.tsx` if deploying elsewhere.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Assets
+Place images under `public/assets` using these paths:
+- Technologies: `public/assets/technologies/*.png`
+- Certificates: `public/assets/certificates/*.png`
+- Interests: `public/assets/interests/*.jpg`
 
-### `npm run build`
+See `ASSETS_NEEDED.md` for a fill list.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Deployment
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### GitHub Pages (Automated with GitHub Actions)
+1. Go to your GitHub repository Settings > Pages
+2. Under "Build and deployment", set Source to "GitHub Actions"
+3. Push to the `main` branch - the workflow in `.github/workflows/deploy.yml` will automatically build and deploy
+4. Your site will be live at `https://<username>.github.io/Portfolio/`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Note:** The `base: '/Portfolio/'` in `vite.config.ts` is configured for a repo named "Portfolio". If your repo has a different name, update it accordingly.
 
-### `npm run eject`
+### Manual Deployment
+Alternatively, you can deploy manually:
+```pwsh
+npm run build
+# Then upload the dist/ folder to your hosting provider
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 404 Handling
+- A custom 404 page is included at `/404` route
+- All unmatched routes show the NotFound component with navigation options
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## License
+MIT
