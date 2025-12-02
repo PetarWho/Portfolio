@@ -204,7 +204,7 @@ const certificatesWithMetadata = Object.entries(certificateImages)
     
     return {
       id: filename,
-      image: `assets/certificates/${path.split('/').pop()}`,
+      image: `/assets/certificates/${path.split('/').pop()}`,
       ...metadata,
     } as Certificate;
   })
