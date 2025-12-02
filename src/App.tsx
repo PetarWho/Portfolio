@@ -9,7 +9,7 @@ import NotFound from '@/pages/NotFound';
 
 function App() {
   return (
-    <BrowserRouter basename="/Portfolio">
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}> 
           <Route index element={<Home />} />
