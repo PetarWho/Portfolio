@@ -2,9 +2,30 @@ import Section from '@/components/common/Section';
 import Container from '@/components/common/Container';
 import Card from '@/components/common/Card';
 import { portfolioData } from '@/data/portfolio';
+import { Github, Linkedin, ExternalLink, Mail } from 'lucide-react';
+import { useState } from 'react';
 
 const About = () => {
-  const { personalInfo, interests } = portfolioData;
+  const { personalInfo, interests, socialLinks } = portfolioData;
+  const [showTooltip, setShowTooltip] = useState(false);
+
+  const handleEmailClick = async (e: React.MouseEvent) => {
+    e.preventDefault();
+    
+    // Copy email to clipboard
+    if (personalInfo.email) {
+      try {
+        await navigator.clipboard.writeText(personalInfo.email);
+        setShowTooltip(true);
+        setTimeout(() => setShowTooltip(false), 2000);
+      } catch (err) {
+        console.error('Failed to copy email:', err);
+      }
+      
+      // Try to open mailto
+      window.location.href = `mailto:${personalInfo.email}`;
+    }
+  };
 
   return (
     <Section>
@@ -33,7 +54,47 @@ const About = () => {
               <dd className="col-span-2">{personalInfo.title}</dd>
               <dt className="font-medium col-span-1">Location</dt>
               <dd className="col-span-2">{personalInfo.location}</dd>
+              <dt className="font-medium col-span-1">Contact</dt>
+              <dd className="col-span-2">{personalInfo.email}</dd>
             </dl>
+            <div className="mt-6 pt-4 border-t border-gray-700">
+              <div className="flex justify-center space-x-4">
+                {socialLinks.map((link) => {
+                  const getIcon = (iconName: string) => {
+                    switch (iconName) {
+                      case 'Github': return <Github className="w-6 h-6" />;
+                      case 'Linkedin': return <Linkedin className="w-6 h-6" />;
+                      default: return <ExternalLink className="w-6 h-6" />;
+                    }
+                  };
+
+                  return (
+                    <a
+                      key={link.name}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2 bg-gray-800 rounded-full hover:bg-gray-700 transition-colors group"
+                      aria-label={link.ariaLabel}
+                    >
+                      {getIcon(link.icon)}
+                    </a>
+                  );
+                })}
+                <a
+                  href={`mailto:${personalInfo.email}`}
+                  onClick={handleEmailClick}
+                  className="p-2 bg-gray-800 rounded-full hover:bg-gray-700 transition-colors group relative"
+                  aria-label="Send email"
+                >
+                  <Mail className="w-6 h-6" />
+                  <div className={`absolute -top-8 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white text-sm px-2 py-1 rounded whitespace-nowrap z-10 transition-all duration-300 ease-in-out ${showTooltip ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}>
+                      Email copied!
+                      <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-gray-900 rotate-45"></div>
+                    </div>
+                </a>
+              </div>
+            </div>
           </Card>
         </div>
 

@@ -5,21 +5,21 @@ import { certificates } from './certificates';
 
 const interests: Interest[] = [
   {
-    name: 'Artificial Intelligence',
-    description: 'Exploring machine learning, neural networks, and AI applications',
-    image: 'assets/interests/ai.jpg',
+    name: 'Vibe Coding',
+    description: 'Developing complex projects with a focus on efficiency and quality using AI tools',
+    image: 'assets/interests/vibe-coding.gif',
     icon: 'Brain',
   },
   {
-    name: 'Virtual Reality',
-    description: 'Immersive experiences and VR development',
-    image: 'assets/interests/vr.jpg',
+    name: 'Augmented Reality',
+    description: 'Virtual enhancements integrated with real-world objects',
+    image: 'assets/interests/ar.gif',
     icon: 'Glasses',
   },
   {
     name: 'Hardware',
     description: 'Computer hardware, electronics, and IoT devices',
-    image: 'assets/interests/hardware.jpg',
+    image: 'assets/interests/hardware.gif',
     icon: 'Cpu',
   },
 ];
@@ -37,31 +37,19 @@ const socialLinks: SocialLink[] = [
     icon: 'Linkedin',
     ariaLabel: 'Connect with me on LinkedIn',
   },
-  {
-    name: 'Facebook',
-    url: 'https://www.facebook.com/petar.todorov.3538',
-    icon: 'Facebook',
-    ariaLabel: 'Follow me on Facebook',
-  },
-  {
-    name: 'Instagram',
-    url: 'https://www.instagram.com/adrenalyne',
-    icon: 'Instagram',
-    ariaLabel: 'Follow me on Instagram',
-  },
 ];
 
 export const portfolioData: PortfolioData = {
   personalInfo: {
     name: 'Petar Penev',
     title: 'Full-Stack Developer',
-    location: 'Plovdiv | Haskovo, Bulgaria',
-    currentEmployment: 'Currently studying Software Technologies and Design at the University of Plovdiv',
+    location: 'Plovdiv, Bulgaria',
+    currentEmployment: 'Bachelor in Software Technologies and Design, and currently pursuing master\'s degree in Software Technologies and AI Systems at the University of Plovdiv',
     bio: [
-      'Certified Fullstack Developer with expertise in both C# and Python, willing to take on complex programming challenges. My programming journey began at the Mathematics High School in Haskovo, which I graduated in 2021. Further honing my skills, I excelled at SoftUni, graduating in 2023 and consistently ranking among the top students.',
-      "Focused on improving my skills and exploring new technology or even other fields beside programming. But I can't replace programming with anything else and never will!",
+      'Certified Fullstack Developer with expertise in both C# and Python, willing to take on complex programming challenges. I excelled at SoftUni, graduating in 2023 and consistently ranking among the top students.',
+      "Focused on improving my skills and exploring new technology or even other fields beside programming. Lately I've been \"vibe coding\" complex SaaS projects and delivering high quality results in impressively short time frames.",
     ],
-    discord: 'royvoytheboy',
+    email: 'contact@petarpenev.info',
   },
   technologies,
   projects,
