@@ -7,19 +7,19 @@ const interests: Interest[] = [
   {
     name: 'Vibe Coding',
     description: 'Developing complex projects with a focus on efficiency and quality using AI tools',
-    image: 'assets/interests/vibe-coding.gif',
+    image: '/assets/interests/vibe-coding.gif',
     icon: 'Brain',
   },
   {
     name: 'Augmented Reality',
     description: 'Virtual enhancements integrated with real-world objects',
-    image: 'assets/interests/ar.gif',
+    image: '/assets/interests/ar.gif',
     icon: 'Glasses',
   },
   {
     name: 'Hardware',
     description: 'Computer hardware, electronics, and IoT devices',
-    image: 'assets/interests/hardware.gif',
+    image: '/assets/interests/hardware.gif',
     icon: 'Cpu',
   },
 ];
