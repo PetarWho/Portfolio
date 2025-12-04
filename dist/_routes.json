@@ -1,12 +1,26 @@
 {
   "version": 1,
+  "description": "Cloudflare Pages routing config for SPA",
   "include": ["/*"],
-  "exclude": ["/assets/*", "/_redirects", "/favicon.ico", "/404.html"],
+  "exclude": [
+    "/assets/*",
+    "/favicon.ico",
+    "/favicon.png",
+    "/*.jpg",
+    "/*.png",
+    "/*.gif",
+    "/*.svg",
+    "/*.webp"
+  ],
   "rules": [
     {
       "include": ["/*"],
-      "exclude": ["/assets/*"],
-      "path": "index.html"
+      "exclude": [
+        "/assets/*",
+        "/favicon.ico",
+        "/favicon.png"
+      ],
+      "path": "/index.html"
     }
   ]
 }
