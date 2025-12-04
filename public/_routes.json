@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "include": ["/*"],
+  "exclude": ["/assets/*", "/_redirects", "/favicon.ico", "/404.html"],
+  "rules": [
+    {
+      "include": ["/*"],
+      "exclude": ["/assets/*"],
+      "path": "index.html"
+    }
+  ]
+}
