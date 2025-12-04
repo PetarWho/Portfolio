@@ -102,11 +102,11 @@ const About = () => {
           <h2 className="text-2xl font-semibold text-white mb-6">Interests</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {interests.map((interest) => (
-              <Card key={interest.name} className="overflow-hidden">
+              <Card key={interest.name} className="overflow-hidden flex flex-col">
                 {interest.image ? (
-                  <img src={interest.image} alt={interest.name} className="w-full h-40 object-cover" loading="lazy" />
+                  <img src={interest.image} alt={interest.name} className="w-full h-auto object-contain flex-shrink-0" loading="lazy" />
                 ) : (
-                  <div className="w-full h-40 bg-gray-800" />
+                  <div className="w-full h-40 bg-gray-800 flex-shrink-0" />
                 )}
                 <div className="p-4">
                   <h3 className="text-lg font-semibold text-white">{interest.name}</h3>
